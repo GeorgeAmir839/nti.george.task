@@ -31,4 +31,4 @@ yargs.command({
 
 })
 yargs.argv
-// node js/myscript.js addnew --name:george --age:24 --salary:4000
+// node js/myscript.js addnew --name=george --age=24 --salary=4000
