@@ -4,7 +4,6 @@ const x = 3000
 const path = require('path')
 
 const publicdir = path.join(__dirname,'../public')
-
 app.use(express.static(publicdir))
 
 const cssdir = path.join(__dirname,'../css')
