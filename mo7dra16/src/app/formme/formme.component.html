@@ -1,0 +1,47 @@
+<section class="container m-5">
+    {{register.value|json}}
+    <form #register="ngForm" (ngSubmit)="submitMe(register)">
+        <div class="mb-3">
+            <label class="form-label">first name</label>
+            <input type="email" class="form-control" id="exampl" name="fname" ngModel>
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">last name</label>
+            <input type="email" class="form-control" id="exampl1" name="lname" ngModel>
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">email</label>
+            <input type="email" class="form-control" id="exampl1" name="ename" ngModel>
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3"> 
+            <label class="form-label">phone</label>
+            <input type="email" class="form-control" id="exampl1" name="pname" ngModel>
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">ginder</label>
+            <input type="radio" value="female" class="form-chech-input" id="exampl3" name="gender" ngModel>female
+            <input type="radio" value="male" class="form-chech-input" id="exampl4" name="gender" ngModel>male
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">contry</label>
+            <select class="form-select" aria-label="Default select example" name="country" ngModel>
+                <option selected>Open this select menu</option>
+                <option *ngFor="let i of countries" [ngValue]='i' value="1">{{i}}</option>
+                
+              </select>
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div ngModelGroup='address'>
+            <label class="form-label">ADDRESS</label>
+            <input type="email" class="form-control" id="exampl1" name="bld" ngModel>
+            <input type="email" class="form-control" id="exampl1" name="st" ngModel>
+        </div>
+
+        <button type="submit" class="btn btn-primary">add</button>
+    </form>
+</section>

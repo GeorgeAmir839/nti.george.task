@@ -1,0 +1,16 @@
+<section class="container">
+    <div class="alert alert-primary" *ngIf="msg!=''">
+        {{msg}}
+    </div>
+    <form [formGroup]="userData" (ngSubmit)="handelregister()">
+        <input class="form-control" formControlName="userName" placeholder="user name">
+        <div class="alert alert-danger" *ngIf="userName.invalid && formFlag || (userName.touched)">
+            <span *ngIf="userName.errors?.required">Required</span>
+            <span *ngIf="userName.errors?.minlength">minimum length</span>
+        </div>
+        <input class="form-control" formControlName="age" placeholder="age">
+        <input class="form-control" formControlName="phone" placeholder="phone">
+        <input class="form-control" formControlName="password" placeholder="password">
+        <button type="submit">add</button>
+    </form>
+</section>

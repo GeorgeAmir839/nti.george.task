@@ -1,0 +1,64 @@
+Models
+------
+users - admin => 
+    - username => unique, alphnumeric, 6 min
+    - phone => numbers , 11 number
+    - age => min 21, max 60
+    - profile image=> image on server, link on db
+    - password => 6=>20 , min captial, small, symbol
+    - type => boolean 0=>user 1=>admin
+books
+    - author => user
+    - name
+    - category => [categories]
+    - number of pages
+
+categories
+    - name
+---------------------------------------------------------------------------------
+Apis
+----
+for both types
+--------------
+register =>post - inside body (type)
+login
+logout
+my profile
+edit profile
+
+for admin
+---------
+show all users, del user, add user, convert user to admin, convert admin to user
+add book, categories, show categories, del categories, edit categories
+show all books, del book
+confirm add
+
+for user
+--------
+add book, show his own books, edit, delete, filter category
+-----------------------------------------------------------------------------------
+admin
+-----
+- login 
+- add admin
+- show all books => confirm, delete
+- edit book
+- show all categories => delete
+- edit category
+- add category
+- add user
+- add book for user
+user
+----
+- login
+- register
+- add book
+- show my books =>delete, category filter
+- edit book
+- show profile
+- edit profile
+custom on number of book => clinic 
+----------------------------------------------------------------
+- input and output communication between components
+- reactive
+- childeren /admin/add /admin/edit -------

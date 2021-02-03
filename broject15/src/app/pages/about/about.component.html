@@ -1,0 +1,23 @@
+<div class="container">
+    <input class="form-control col-6" [(ngModel)]="d">
+
+
+    <div [ngSwitch]="d"  class="text-center">
+        <div *ngSwitchCase="1">saturday</div>
+        <div *ngSwitchCase="2">sunday</div>
+        <div *ngSwitchCase="3">Monday</div>
+        <div *ngSwitchCase="4">Tuesday</div>
+        <div *ngSwitchCase="5">Wednesday</div>
+        <div *ngSwitchCase="6">Thursday</div>
+        <div *ngSwitchCase="7">friday</div>
+        <div *ngSwitchCase="">insert data</div>
+        <div *ngSwitchDefault>error</div>
+    </div>
+</div>
+<!-- *ngIf="d>=1 && d<=7;else myElse"
+<ng-ng-template #myElse>
+    <div>
+        insert data
+    </div>
+
+</ng-ng-template> -->

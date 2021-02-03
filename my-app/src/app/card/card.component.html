@@ -1,0 +1,10 @@
+<section class="row">
+  <div class="card" class="col-3" *ngFor="let card of data">
+    <img [src]="card.imgurl" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{card.name}}</h5>
+      <p class="card-text">{{card.content}}</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+</section>

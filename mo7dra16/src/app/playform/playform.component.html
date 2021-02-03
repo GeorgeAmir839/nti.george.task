@@ -1,0 +1,60 @@
+<section class="container m-5"> 
+    <!--first name, last name, email, gender, martial status, phone, country-->
+    <!-- <ng-container *ngIf="register.submitted">
+    {{register.value|json}}
+    </ng-container> -->
+    <!-- {{register.submitted}} -->
+    <!-- {{formData|json}} -->
+    {{register.value|json}}
+    <form #register="ngForm" (ngSubmit)="submitMe(register)">
+        <div class="mb-3">
+            <label class="form-label">first name</label>
+            <input type="email" class="form-control" id="exampl" name="fname" #fname="ngModel" [(ngModel)]="formData.fname" required
+                minlength=5 maxlength=12 pattern="^[a-zA-Z]+$" email>
+
+                <div *ngIf="fname.invalid && fname.dirty">error</div>
+               <!--  minlength=5 maxlength=12 pattern="^[a-zA-Z]+$" email -->
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">last name</label>
+            <input type="email" class="form-control" id="exampl1" name="lname" [(ngModel)]="formData.lname">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">email</label>
+            <input type="email" class="form-control" id="exampl1" name="ename" [(ngModel)]="formData.emails">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">phone</label>
+            <input type="email" class="form-control" id="exampl1" name="pname" [(ngModel)]="formData.phones">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">ginder</label>
+            <input type="radio" value="female" class="form-chech-input" id="exampl3" name="gender"
+                [(ngModel)]="formData.gender">female
+            <input type="radio" value="male" class="form-chech-input" id="exampl4" name="gender"
+                [(ngModel)]="formData.gender">male
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">contry</label>
+            <select class="form-select" aria-label="Default select example" name="country"
+                [(ngModel)]="formData.country">
+                <option selected>Open this select menu</option>
+                <option *ngFor="let i of countries" [ngValue]='i' value="1">{{i}}</option>
+
+            </select>
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div ngModelGroup='address'>
+            <label class="form-label">ADDRESS</label>
+            <input type="email" class="form-control" id="exampl1" name="bld" [(ngModel)]="formData.address.street">
+            <input type="email" class="form-control" id="exampl1" name="st" [(ngModel)]="formData.address.buildingNo">
+        </div>
+
+        <button  class="btn btn-primary">add</button>
+    </form>
+</section>

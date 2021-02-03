@@ -1,0 +1,28 @@
+<section class="m-5">
+    <h2>register works!</h2>
+
+    <div  class="{{flagr?'alert alert-success':'alert alert-danger'}}"  *ngIf="massege!=''"><h4>{{massege}}</h4></div>
+    <form #register="ngForm" (ngSubmit)="handleRegister()">
+        <div>
+            <input class="form-control my-2" name="name" [(ngModel)]='user.name' required minlength=6 maxlength=20
+                placeholder="name" #fname="ngModel">
+            <div *ngIf="register.submitted && fname.invalid">
+                <div *ngIf="fname.errors.required" class="alert alert-danger">required</div>
+                <div *ngIf="fname.errors.minlength" class="alert alert-danger">min length</div>
+                <div *ngIf="fname.errors.maxlength" class="alert alert-danger">max length</div>
+            </div>
+        </div>
+        <div>
+            <input class="form-control my-2" name="age" [(ngModel)]='user.age' #age="ngModel" min=15 max=60>
+        </div>
+        <div>
+            <input class="form-control my-2" name="email" [(ngModel)]='user.email' required email placeholder="email"
+                #email="ngModel">
+        </div>
+        <div>
+            <input class="form-control my-2" name="password" [(ngModel)]='user.password' required minlength=6
+                maxlength=20 placeholder="password" #password="ngModel">
+        </div>
+        <button class="btn btn-danger">add</button>
+    </form>
+</section>
